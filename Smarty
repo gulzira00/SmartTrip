@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SmartTrip</title>
+  <style>
+    /* [Стилизация коды алдыңғыдай сақталған] */
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0B3D91;
+      color: #fff;
+    }
+    header {
+      background-color: #062B6A;
+      padding: 20px;
+      text-align: center;
+    }
+    header img {
+      height: 50px;
+      vertical-align: middle;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+    nav a, .lang-switch select {
+      color: #A7C7E7;
+      text-decoration: none;
+      font-weight: bold;
+      background: none;
+      border: none;
+      cursor: pointer;
+      font-size: 1em;
+    }
+    .lang-switch select {
+      background-color: #062B6A;
+      color: #A7C7E7;
+      border-radius: 5px;
+      padding: 5px;
+    }
+    .hero {
+      text-align: center;
+      padding: 50px 20px;
+    }
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+    .card {
+      background-color: #15428A;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    }
+    .feedback, .route-generator, .help-section {
+      padding: 40px 20px;
+      background-color: #133A7A;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #062B6A;
+      margin-top: 40px;
+    }
+    .chatbot {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #1A5FB4;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      color: white;
+      font-size: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="SmartTrip Logo">
+    <h1 style="display:inline-block; margin-left:10px;">SmartTrip</h1>
+    <nav>
+      <a href="#">Басты бет</a>
+      <a href="#almaty">Алматы</a>
+      <a href="#astana">Астана</a>
+      <a href="#route">Маршрут генераторы</a>
+      <a href="#customs">Дәстүрлер</a>
+      <a href="#language-helper">Тіл көмекшісі</a>
+      <a href="#help">Көмек</a>
+      <a href="#feedback">Кері байланыс</a>
+      <span class="lang-switch">
+        <select onchange="changeLanguage(this.value)">
+          <option value="kk" selected>Қазақша</option>
+          <option value="ru">Русский</option>
+          <option value="en">English</option>
+        </select>
+      </span>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h1 id="heroTitle">SmartTrip: Сіздің сенімді саяхат серіктесіңіз</h1>
+    <p id="heroDesc">SmartTrip – бұл туристерге арналған интерактивті платформа. Біздің мақсатымыз – саяхатшылардың жолын оңайлату, қауіпсіз әрі әсерлі саяхат ұйымдастыру.</p>
+  </div>
+
+  <section id="almaty" class="features">
+    <h2>Алматы</h2>
+    <div class="card"><h3>Көк-Төбе</h3><p>Қаланың ең биік нүктелерінің бірі, панорамалық көрініспен танымал.</p></div>
+    <div class="card"><h3>Медеу</h3><p>Жоғары таулы мұз айдыны мен шаңғы курорттарына жол.</p></div>
+  </section>
+
+  <section id="astana" class="features">
+    <h2>Астана</h2>
+    <div class="card"><h3>Бәйтерек</h3><p>Астананың символы, қаланың орталығындағы көру алаңы.</p></div>
+    <div class="card"><h3>EXPO 2017</h3><p>Болашақ энергия павильондары мен заманауи архитектура.</p></div>
+  </section>
+
+  <section id="route" class="route-generator">
+    <h2>Интерактивті маршрут генераторы</h2>
+    <p>Жақын арадағы қызықты орындарды таңдаңыз және өзіңіздің жеке маршрут картаңызды жасаңыз. Бұл функция әзірлену үстінде 🚧</p>
+  </section>
+
+  <section id="customs" class="features">
+    <h2>Жергілікті дәстүрлер мен тыйымдар</h2>
+    <div class="card"><h3>Қонақжайлылық</h3><p>Қазақ халқы қонақты аса құрметтейді. Үйге кіргенде амандасып, ұсынылған асты қабыл алған жөн.</p></div>
+    <div class="card"><h3>Қоғамдық орындарда әдеп</h3><p>Қоғамдық орындарда қатты сөйлеуден немесе дауыс көтеруден аулақ болыңыз.</p></div>
+    <div class="card"><h3>Тыйымдар</h3><p>Қасиетті орындарда (мешіт, кесене) ашық киіммен кіруге болмайды. Фотоға түсірмес бұрын рұқсат сұраңыз.</p></div>
+  </section>
+
+  <section id="language-helper" class="features">
+    <h2>Тілдік көмекші: Қалада жиі қолданылатын 10 фраза</h2>
+    <div class="card">
+      <ul>
+        <li><strong>Сәлеметсіз бе?</strong> – Hello</li>
+        <li><strong>Рақмет</strong> – Thank you</li>
+        <li><strong>Қалай барсам болады?</strong> – How do I get there?</li>
+        <li><strong>Бағасы қанша?</strong> – How much is it?</li>
+        <li><strong>Кешіріңіз</strong> – Excuse me / Sorry</li>
+        <li><strong>Иә / Жоқ</strong> – Yes / No</li>
+        <li><strong>Маған көмек керек</strong> – I need help</li>
+        <li><strong>Қайда тамақ ішуге болады?</strong> – Where can I eat?</li>
+        <li><strong>Қайда дәретхана?</strong> – Where is the restroom?</li>
+        <li><strong>Мен туристпін</strong> – I’m a tourist</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="help" class="help-section">
+    <h2>Көмек көрсету</h2>
+    <ul>
+      <li><a href="https://2gis.kz/almaty" target="_blank">2ГИС арқылы Алматы бағыттары</a></li>
+      <li><a href="https://2gis.kz/astana" target="_blank">2ГИС арқылы Астана бағыттары</a></li>
+      <li><a href="https://taxi.yandex.kz" target="_blank">Яндекс Такси</a></li>
+      <li><a href="https://www.google.com/maps/search/Турист+ақпараттық+орталығы/" target="_blank">Туристік көмек көрсету орталықтары</a></li>
+    </ul>
+  </section>
+
+  <section id="feedback" class="feedback">
+    <h2>Кері байланыс</h2>
+    <form>
+      <input type="text" placeholder="Атыңыз" required>
+      <input type="email" placeholder="Email" required>
+      <textarea rows="5" placeholder="Хабарлама" required></textarea>
+      <button type="submit">Жіберу</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 SmartTrip. Барлық құқықтар қорғалған.</p>
+  </footer>
+
+  <div class="chatbot" onclick="window.open('https://t.me/SmartTripChatBot', '_blank')">💬</div>
+
+  <script>
+    const translations = {
+      kk: {
+        heroTitle: "SmartTrip: Сіздің сенімді саяхат серіктесіңіз",
+        heroDesc: "SmartTrip – бұл туристерге арналған интерактивті платформа. Біздің мақсатымыз – саяхатшылардың жолын оңайлату, қауіпсіз әрі әсерлі саяхат ұйымдастыру.",
+      },
+      ru: {
+        heroTitle: "SmartTrip: Ваш надежный партнер в путешествиях",
+        heroDesc: "SmartTrip — это интерактивная платформа для туристов. Наша цель — упростить путь путешественников и сделать поездки безопасными и насыщенными.",
+      },
+      en: {
+        heroTitle: "SmartTrip: Your trusted travel companion",
+        heroDesc: "SmartTrip is an interactive platform for travelers. Our goal is to simplify the journey and make it safe and inspiring.",
+      }
+    };
+    function changeLanguage(lang) {
+      document.getElementById('heroTitle').innerText = translations[lang].heroTitle;
+      document.getElementById('heroDesc').innerText = translations[lang].heroDesc;
+    }
+  </script>
+</body>
+</html>
